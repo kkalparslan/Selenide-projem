@@ -7,3 +7,6 @@
       And User should click the start button
       And User should verify the text "Hello World!"
       And User should keeps the page open
+
+        # local, elemente (has, özel) göre verilen bir wait çeşidi. maksimum bekleme süresini versekte elmenti gördüğü
+        # anda bekleme süresinin tamamlanmasını beklemeden diğer işleme geçer.
