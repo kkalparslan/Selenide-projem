@@ -123,8 +123,8 @@ public class TestCenterStepDefinition {
 
     @And("User should drag and drop the source element")
     public void userShouldDragAndDropTheSourceElement() {
-        //selenium
-        //Actions actions=new Actions();
+        //seleniumda;
+        //Actions actions=new Actions(Buraya da Driver'ı koymamız gerekiyordu);
 
         //selenide de kısaca actions()
         //actions().dragAndDrop(testCenterPage.source, testCenterPage.target).perform(); bu şekilde de çalışır ama
@@ -135,11 +135,19 @@ public class TestCenterStepDefinition {
                 dragAndDrop(testCenterPage.source, testCenterPage.target) // kaynak elementi hedefe surukle
                 .build() // baglantiyi olustur (OPTIONAL)
                 .perform(); // verilen komutlari yap (ZORUNLU)
-
+    }
+    @Given("User should drag the source element to coordinates {int} by {int}")
+    public void user_should_drag_the_source_element_to_coordinates_by(Integer int1, Integer int2) {
         actions()
-                .dragAndDropBy(testCenterPage.source,400,-18)
+                .dragAndDropBy(testCenterPage.source,int1,int2)
                 .build()
                 .perform();
+    }
+    @Given("User should verify the element has been dragged to coordinate {int} by {int}")
+    public void user_should_verify_the_element_has_been_dragged_to_coordinate_by(Integer int1, Integer int2) {
+        String styleValue=testCenterPage.source.getAttribute("style");
+        System.out.println(styleValue);
+        Assert.assertTrue(styleValue.contains(String.valueOf(int1)) && styleValue.contains(String.valueOf(int2)));
     }
 
     @And("User should click the start button")
@@ -159,16 +167,5 @@ public class TestCenterStepDefinition {
         Assert.assertEquals(message, testCenterPage.helloWorld.getText());
 
     }
-    @Given("User should drag the source element to coordinates {int} by {int}")
-    public void user_should_drag_the_source_element_to_coordinates_by(Integer int1, Integer int2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @Given("User should verify the element has been dragged to coordinate {int} by {int}")
-    public void user_should_verify_the_element_has_been_dragged_to_coordinate_by(Integer int1, Integer int2) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
 
 }

@@ -1,7 +1,11 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -45,5 +49,4 @@ public class TestCenterPage {
     // EXPLICIT WAIT
     public SelenideElement startButton= $(By.xpath("//button[.='Start']"));
     public SelenideElement helloWorld = $(By.xpath("//div[@id='finish']"));
-
 }
