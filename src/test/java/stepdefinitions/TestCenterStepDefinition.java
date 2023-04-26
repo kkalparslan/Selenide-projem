@@ -41,7 +41,9 @@ public class TestCenterStepDefinition {
         //        Assert.assertTrue(testCenterPage.messageText.isDisplayed());//JUNIT
         //        testCenterPage.messageText.shouldBe(Condition.visible);
         testCenterPage.messageText.shouldBe(visible); // SELENIDE ASSERTION
-        // FAIL EDERSE EKRAN GORUNTUSU OTOMATIK OLARAK ALINIR VE build DOSYASINA KAYDEDILIR
+        /**
+         * FAIL EDERSE EKRAN GORUNTUSU OTOMATIK OLARAK ALINIR VE build DOSYASINA KAYDEDILIR
+         */
     }
 
     // DROPDOWN STEP DEFS
@@ -93,13 +95,19 @@ public class TestCenterStepDefinition {
         switchTo().alert().sendKeys(text); // alert e feature file dan gelen metin girildi.
         sleep(3000);
         switchTo().alert().accept();
-        sleep(3000); // selenide sleep. dynamic. ihtiyaç olursa bekler//thread sleep hard. her halükarda bekler.
+        sleep(3000);
+        /**
+         * selenide sleep. dynamic. ihtiyaç olursa bekler//thread sleep hard. her halükarda bekler.
+         */
     }
     @Then("User should verify the text is {string}")
     public void userShouldVerifyTheTextIs(String message) {
-        testCenterPage.sonuc.shouldHave(text(message)); // Condition sınıfını static import yapınca sadece text() metodunu
-        // kullanabiliriz. Featura file dan gelen metnin sonuç elementinde içerildiğini doğruluyoruz. TERCIH EDİLEN
-        //Assert.assertTrue(testCenterPage.sonuc.getText().contains(message)); //junit ile de assert edilebilir.
+        testCenterPage.sonuc.shouldHave(text(message));
+        /**
+         * Condition sınıfını static import yapınca sadece text() metodunu kullanabiliriz.
+         * Featura file dan gelen metnin sonuç elementinde içerildiğini doğruluyoruz. TERCIH EDİLEN
+         * Assert.assertTrue(testCenterPage.sonuc.getText().contains(message)); =>junit ile de assert edilebilir.
+         */
     }
     @And("User should switch to frame {int}")
     public void user_should_switch_to_frame(Integer frame) {
@@ -156,16 +164,25 @@ public class TestCenterStepDefinition {
     }
     @And("User should verify the text {string}")
     public void user_should_verify_the_text(String message) {
-        //Assert.assertEquals(message, testCenterPage.helloWorld.getText()); //fail. problem of wait7
-        //1 WebDriverWait
+        //Assert.assertEquals(message, testCenterPage.helloWorld.getText()); //fail; problem of wait
+       // 1 WebDriverWait
 //        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.visibilityOf(testCenterPage.helloWorld)); // explicit wait
-//        Assert.assertEquals(message, testCenterPage.helloWorld.getText()); sonuç alamadım kontrol
+//        Assert.assertEquals(message, testCenterPage.helloWorld.getText()); //pass; the problem solved with explicit wait
 
         //2. Selenide wait
-        testCenterPage.helloWorld.should(visible, Duration.ofSeconds(10));
-        Assert.assertEquals(message, testCenterPage.helloWorld.getText());
+        /**
+         * burada selenium veya junit teki assertion ları (old fashion) webdriver wait kullanmaktansa, selenide deki daha
+         * modern, kullanışlı ve kolay olan selenide assertionları ile birlikte explicit wait kullanılabilir
+         */
+//        testCenterPage.helloWorld.should(visible, Duration.ofSeconds(10)); // selenide wait
+//        Assert.assertEquals(message, testCenterPage.helloWorld.getText());
 
+        //3. Selenide wait
+        testCenterPage.helloWorld.shouldHave(text("Hello World!"), Duration.ofSeconds(10));
+        /**
+         * burada tek satırda hem explicit wait kullanmıi hem de assertion yapmış olduk
+         */
+        System.out.println(testCenterPage.helloWorld.getText());
     }
-
 }

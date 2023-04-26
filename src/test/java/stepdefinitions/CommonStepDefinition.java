@@ -15,7 +15,6 @@ public class CommonStepDefinition {
     public void user_should_go_to_the_url(String string) {
         open(string); //bir sayfaya gitmek için open() fonksiyonu kullnılır
     }
-
     @Then("User should be wait {int} seconds")
     public void user_should_be_wait_seconds(Integer int1) {
         // selenide default olarak 4 saniye bekler. 4 saniyeden fazla beklemek için sleep methodu kullanılır.
@@ -33,20 +32,20 @@ public class CommonStepDefinition {
     public void user_should_refresh_the_page() {
         refresh();
     }
-
     @And("User should keeps the page open")
     public void userShouldKeepsThePageOpen() {
         //        Varyasilan selenide ayarlarinda, browser otomatik kapanmakdadir
         //        Configuration.holdBrowserOpen=false;//VARSAYILAN
         Configuration.holdBrowserOpen=true;
     }
-
     @And("User should take all screen shot")
     public void userShouldTakeAllScreenShot() {
-        screenshot("image"); // parametreyi ekran görüntüsünü dinamik yapmak için (new Date().toString())
-        // şeklinde yapılabiliyor. Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor.
+        screenshot("image");
+        /**
+         * parametreyi ekran görüntüsünü dinamik yapmak için (new Date().toString()) şeklinde yapılabiliyor.
+         * Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor.
+         */
     }
-
     @Given("User should select the browser {string}")
     public void userShouldSelectTheBrowser(String browserTipi) {
         switch (browserTipi){
