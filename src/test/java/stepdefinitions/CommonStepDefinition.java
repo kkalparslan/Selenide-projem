@@ -46,6 +46,10 @@ public class CommonStepDefinition {
          * Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor.
          */
     }
+    @And("User should take screenshot of google image")
+    public void userShouldTakeScreenshotOfGoogleImage() {
+
+    }
     @Given("User should select the browser {string}")
     public void userShouldSelectTheBrowser(String browserTipi) {
         switch (browserTipi){

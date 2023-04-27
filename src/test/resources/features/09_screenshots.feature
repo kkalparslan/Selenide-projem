@@ -1,11 +1,13 @@
 
   Feature: screenshots
 
-    @tumekrangoruntusu
-    Scenario: TC_01 all screen shot
+    @wholescreenshot
+    Scenario: TC_01 whole screen shot
       Given User should go to the url "https://www.google.com"
       And User should take all screen shot
 
       @googleimage
-      Scenario: TC_02 belirli bir elementin ekran goruntusu
+      Scenario: TC_02 screenshot of a specific element
+      Given User should go to the url "https://www.google.com"
+      And User should take screenshot of google image
 
