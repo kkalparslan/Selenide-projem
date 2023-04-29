@@ -40,11 +40,11 @@ public class CommonStepDefinition {
     }
     @And("User should take all screen shot")
     public void userShouldTakeAllScreenShot() {
-        screenshot("image"); //burada ekran görüntüsü ismi dynamic değil
+        screenshot("image"); //burada ekran görüntüsü ismi dynamic değil..tüm ekran görüntüsü..
         /**
          * screenshot(new Date().toString());
          * parametreyi ekran görüntüsünü dinamik yapmak için (new Date().toString()) şeklinde yapılabiliyor.
-         * Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor.
+         * Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor. eğer bir test case fail olursa otomatik olarak ss alıyor
          */
     }
     @Given("User should select the browser {string}")

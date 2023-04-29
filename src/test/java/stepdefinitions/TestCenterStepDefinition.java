@@ -187,6 +187,12 @@ public class TestCenterStepDefinition {
     }
     @And("User should take screenshot of google image")
     public void userShouldTakeScreenshotOfGoogleImage() {
-        testCenterPage.googleImage.screenshot();
+        testCenterPage.googleImage.screenshot(); //belirli bir yerin ekran görüntüsü
+    }
+
+    @And("User should scroll as footer element is visible")
+    public void userShouldScrollAsFooterElementIsVisible() {
+        //testCenterPage.amazonFooter
+        executeJavaScript("arguments[0].scrollIntoView(true);",testCenterPage.tiensFooter);
     }
 }
