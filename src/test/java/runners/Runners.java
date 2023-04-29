@@ -13,11 +13,12 @@ import org.junit.runner.RunWith;
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
         },
-        monochrome=true,
+        monochrome=true, // testler koşulduktan sonra terminalde bu testte yönelik verilen bilgileri
+                         // beyaz sade bir renkle almaya yarıyor
         features = "./src/test/resources/features",
         glue = {"stepdefinitions"},
         dryRun = false,
-        tags = "@wait"
+        tags = "@screen"
                     )
 
 public class Runners {

@@ -1,4 +1,5 @@
 
+@screen
   Feature: screenshots
 
     @wholescreenshot

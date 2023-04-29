@@ -13,7 +13,7 @@ public class CommonStepDefinition {
 
     @Given("User should go to the url {string}")
     public void user_should_go_to_the_url(String string) {
-        open(string); //bir sayfaya gitmek için open() fonksiyonu kullnılır
+        open(string); //bir sayfaya gitmek için open() fonksiyonu kullanılır
     }
     @Then("User should be wait {int} seconds")
     public void user_should_be_wait_seconds(Integer int1) {
@@ -40,15 +40,12 @@ public class CommonStepDefinition {
     }
     @And("User should take all screen shot")
     public void userShouldTakeAllScreenShot() {
-        screenshot("image");
+        screenshot("image"); //burada ekran görüntüsü ismi dynamic değil
         /**
+         * screenshot(new Date().toString());
          * parametreyi ekran görüntüsünü dinamik yapmak için (new Date().toString()) şeklinde yapılabiliyor.
          * Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor.
          */
-    }
-    @And("User should take screenshot of google image")
-    public void userShouldTakeScreenshotOfGoogleImage() {
-
     }
     @Given("User should select the browser {string}")
     public void userShouldSelectTheBrowser(String browserTipi) {
