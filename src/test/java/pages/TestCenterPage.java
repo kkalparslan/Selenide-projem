@@ -49,4 +49,10 @@ public class TestCenterPage {
     // EXPLICIT WAIT
     public SelenideElement startButton= $(By.xpath("//button[.='Start']"));
     public SelenideElement helloWorld = $(By.xpath("//div[@id='finish']"));
+
+    // SCREENSHOT
+    public SelenideElement googleImage = $(".lnXdpd");
+
+    // JS EXECUTOR
+    public SelenideElement amazonFooter =$(".navFooterMoreOnAmazon");
 }

@@ -185,6 +185,8 @@ public class TestCenterStepDefinition {
          */
         System.out.println(testCenterPage.helloWorld.getText());
     }
-
-
+    @And("User should take screenshot of google image")
+    public void userShouldTakeScreenshotOfGoogleImage() {
+        testCenterPage.googleImage.screenshot();
+    }
 }
