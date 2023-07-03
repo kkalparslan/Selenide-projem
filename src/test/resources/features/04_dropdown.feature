@@ -1,5 +1,4 @@
-
-  Feature: dropdown
+Feature: dropdown
 
     @dropdown
     Scenario: TC_01 dropdown

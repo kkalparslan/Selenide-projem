@@ -1,6 +1,4 @@
-
-
-  Feature: checkbox and radio button
+Feature: checkbox and radio button
 
     @checkbox
     Scenario: TC01 checkbox

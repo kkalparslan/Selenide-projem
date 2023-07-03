@@ -1,5 +1,4 @@
-
-  Feature: alerts
+Feature: alerts
 
     @alert
     Scenario: TC_01 alert
