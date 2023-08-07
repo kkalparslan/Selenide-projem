@@ -12,18 +12,13 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.TestCenterPage;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
-
 public class TestCenterStepDefinition {
-
     TestCenterPage testCenterPage = new TestCenterPage();
-
     @Given("User should enter username")
     public void user_should_enter_username() {
         testCenterPage.userName.setValue("techproed");
@@ -45,7 +40,6 @@ public class TestCenterStepDefinition {
          * FAIL EDERSE EKRAN GORUNTUSU OTOMATIK OLARAK ALINIR VE build DOSYASINA KAYDEDILIR
          */
     }
-
     // DROPDOWN STEP DEFS
     @And("User should selects if {string} is not selected")
     public void userShouldSelectsIfIsNotSelected(String text) {
@@ -65,14 +59,12 @@ public class TestCenterStepDefinition {
             testCenterPage.red.click();//sec
             testCenterPage.red.shouldBe(checked);//secili oldugunu test et
         }
-
         if (text.equals("Football")&& !testCenterPage.football.isSelected()){
             testCenterPage.football.shouldNotBe(checked);//secili olmadigini test et
             testCenterPage.football.click();//sec
             testCenterPage.football.shouldBe(checked);//secili oldugunu test et
         }
     }
-
     @And("The user should select {int} as the year, {string} as the month, and {int} as the day.")
     public void theUserShouldSelectAsTheYearAsTheMonthAndAsTheDay(int year, String month, int day) {
      //   testCenterPage.year.selectOption(2000); makul değil index=2000 e gider.
@@ -84,7 +76,6 @@ public class TestCenterStepDefinition {
         testCenterPage.day.selectOptionByValue(String.valueOf(day)); // value = "15"
         sleep(3000);
     }
-
     // ALERT STEP DEFS
     @And("User should click alert prompt button")
     public void userShouldClickAlertPromptButton() {
@@ -128,7 +119,6 @@ public class TestCenterStepDefinition {
         Thread.sleep(3000);
         System.out.println("YENI SAYFA URL I : "+url());//YENI SAYFA URL NI VERECEKDIR
     }
-
     @And("User should drag and drop the source element")
     public void userShouldDragAndDropTheSourceElement() {
         //seleniumda;
@@ -157,7 +147,6 @@ public class TestCenterStepDefinition {
         System.out.println(styleValue);
         Assert.assertTrue(styleValue.contains(String.valueOf(int1)) && styleValue.contains(String.valueOf(int2)));
     }
-
     @And("User should click the start button")
     public void user_should_click_the_start_button() {
         testCenterPage.startButton.click();
@@ -189,7 +178,6 @@ public class TestCenterStepDefinition {
     public void userShouldTakeScreenshotOfGoogleImage() {
         testCenterPage.googleImage.screenshot(); //belirli bir yerin ekran görüntüsü
     }
-
     @And("User should scroll as footer element is visible")
     public void userShouldScrollAsFooterElementIsVisible() {
         //testCenterPage.amazonFooter
