@@ -1,4 +1,3 @@
-
   Feature: explicit wait
 
     @wait

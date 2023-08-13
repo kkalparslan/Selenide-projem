@@ -1,4 +1,3 @@
-
 @screen
   Feature: screenshots
 
