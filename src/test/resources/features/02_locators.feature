@@ -1,4 +1,3 @@
-
 @locators
   Feature: locators
 
