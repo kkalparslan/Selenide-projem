@@ -7,4 +7,4 @@ Feature: js executor
     And User should take all screen shot
     And User should scroll as footer element is visible
     And User should take all screen shot
-   # Then User should keeps the page open
+    # Then User should keeps the page open

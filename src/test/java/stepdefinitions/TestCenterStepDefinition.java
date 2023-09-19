@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
-public class TestCenterStepDefinition {
+public class  TestCenterStepDefinition {
     TestCenterPage testCenterPage = new TestCenterPage();
     @Given("User should enter username")
     public void user_should_enter_username() {
