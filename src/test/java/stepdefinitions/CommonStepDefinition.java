@@ -10,7 +10,6 @@ import java.util.Date;
 import static com.codeborne.selenide.Selenide.*;
 
 public class CommonStepDefinition {
-
     @Given("User should go to the url {string}")
     public void user_should_go_to_the_url(String string) {
         open(string); //bir sayfaya gitmek için open() fonksiyonu kullanılır
