@@ -14,6 +14,7 @@
 
       # 1. feature file oluştur
       # 2. test case leri yaz
-      # 3. yeni test adımları için yeni bir step definitions class oluştur ve step definitions (java methodları) oluştur.
+      # 3. yeni test adımları için yeni bir step definitions class oluştur ve step definitions
+      # (java methodları) oluştur.
       # 4. page class olustur--> pages klasorunun altinda
       # 5. kullanici adi, sifresi ve submit butonunu o sayfada bul
