@@ -7,7 +7,6 @@
       And User should drag and drop the source element
       Then User should keeps the page open
 
-
     @draganddropby
     Scenario: TC_02 drag and drop by
       Given User should go to the url "https://jqueryui.com/droppable/"
