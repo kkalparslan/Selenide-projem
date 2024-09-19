@@ -64,6 +64,4 @@ public class CommonStepDefinition {
             default:
                 Configuration.browser = "chrome";
                 break;
-        }
-    }
-}
+        }}}
