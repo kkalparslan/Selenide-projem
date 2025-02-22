@@ -47,7 +47,7 @@ public class  TestCenterStepDefinition {
         if(text.equals("Checkbox1") && !testCenterPage.checkbox1.isSelected()){
             testCenterPage.checkbox1.click();
            // Assert.assertTrue(testCenterPage.checkbox1.isSelected()); selenium assert
-           // testCenterPage.checkbox1.shouldBe(Condition.checked); //selenide assert kısa veriyonu aşağıda
+           // testCenterPage.checkbox1.shouldBe(Condition.checked); //selenide assert kısa versiyonu aşağıda
             testCenterPage.checkbox1.shouldBe(checked);
         }
         if (text.equals("Checkbox2") && !testCenterPage.checkbox2.isSelected()){
@@ -75,6 +75,13 @@ public class  TestCenterStepDefinition {
         sleep(3000);
         testCenterPage.day.selectOptionByValue(String.valueOf(day)); // value = "15"
         sleep(3000);
+
+        /**
+         * selenide de 3 temel select option vardır.
+         * selectOption() ==> index alır
+         * selectOption() ==> "" içinde yani string olarak visible text alarak kullanılır
+         * selectOptionByValue ==> "" value değeri alır
+         */
     }
     // ALERT STEP DEFS
     @And("User should click alert prompt button")
