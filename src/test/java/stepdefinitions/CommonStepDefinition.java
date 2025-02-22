@@ -16,13 +16,16 @@ public class CommonStepDefinition {
     }
     @Then("User should be wait {int} seconds")
     public void user_should_be_wait_seconds(Integer int1) {
-        // selenide default olarak 4 saniye bekler. 4 saniyeden fazla beklemek için sleep methodu kullanılır.
-        sleep(int1 * 1000);  //selenide de bekleme milisecond kabul eder. saniye ye çevirmek için 1000 ile çarpılmalıdır.
+        // selenide default olarak 4 saniye bekler. 4 saniyeden fazla beklemek için sleep()
+        // methodu kullanılır.
+        sleep(int1 * 1000);  //selenide de bekleme milisecond kabul eder.
+        // saniye ye çevirmek için 1000 ile çarpılmalıdır.
     }
     @Then("User should go the previous page")
     public void user_should_go_the_previous_page() {
         back();
     }
+
     @Then("User should go the next page")
     public void user_should_go_the_next_page() {
         forward();
@@ -39,11 +42,13 @@ public class CommonStepDefinition {
     }
     @And("User should take all screen shot")
     public void userShouldTakeAllScreenShot() {
-        screenshot("image"); //burada ekran görüntüsü ismi dynamic değil..tüm ekran görüntüsü..
+        screenshot("image"); //burada ekran görüntüsü ismi dynamic değil..
+        // tüm ekran görüntüsü..
         /**
          * screenshot(new Date().toString());
-         * parametreyi ekran görüntüsünü dinamik yapmak için (new Date().toString()) şeklinde yapılabiliyor.
-         * Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor. eğer bir test case fail olursa otomatik olarak ss alıyor
+         * parametreyi ekran görüntüsünü dinamik yapmak için (new Date().toString()) şeklinde
+         * yapılabiliyor. Ancak benim cihaz dahil windowslarda ss çıkmayabiliyor.
+         * eğer bir test case fail olursa otomatik olarak ss alıyor
          */
     }
     @Given("User should select the browser {string}")

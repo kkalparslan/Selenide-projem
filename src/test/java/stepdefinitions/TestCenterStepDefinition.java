@@ -97,7 +97,8 @@ public class  TestCenterStepDefinition {
         /**
          * Condition sınıfını static import yapınca sadece text() metodunu kullanabiliriz.
          * Featura file dan gelen metnin sonuç elementinde içerildiğini doğruluyoruz. TERCIH EDİLEN
-         * Assert.assertTrue(testCenterPage.sonuc.getText().contains(message)); =>junit ile de assert edilebilir.
+         * Assert.assertTrue(testCenterPage.sonuc.getText().contains(message)); =>junit ile de
+         * assert edilebilir.
          */
     }
     @And("User should switch to frame {int}")
@@ -114,7 +115,8 @@ public class  TestCenterStepDefinition {
     }
     @And("switch to window {int}")
     public void switch_to_window(Integer targetWindow) throws InterruptedException {
-        switchTo().window(targetWindow-1, Duration.ofSeconds(5));// INDEX. Duration.ofSeconds(5)) zorunlu degil
+        switchTo().window(targetWindow-1, Duration.ofSeconds(5));// INDEX.
+        // Duration.ofSeconds(5)) zorunlu degil
         System.out.println("Yeni pencereye gecil yapildi");
         Thread.sleep(3000);
         System.out.println("YENI SAYFA URL I : "+url());//YENI SAYFA URL NI VERECEKDIR
@@ -125,8 +127,8 @@ public class  TestCenterStepDefinition {
         //Actions actions=new Actions(Buraya da Driver'ı koymamız gerekiyordu);
 
         //selenide de kısaca actions()
-        //actions().dragAndDrop(testCenterPage.source, testCenterPage.target).perform(); bu şekilde de çalışır ama
-        // build() ile birlikte kullanmak daha güzel olur.
+        //actions().dragAndDrop(testCenterPage.source, testCenterPage.target).perform();
+        // bu şekilde de çalışır ama build() ile birlikte kullanmak daha güzel olur.
 
         //1.dragAndDrop
         actions().
@@ -157,12 +159,14 @@ public class  TestCenterStepDefinition {
        // 1 WebDriverWait
 //        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.visibilityOf(testCenterPage.helloWorld)); // explicit wait
-//        Assert.assertEquals(message, testCenterPage.helloWorld.getText()); //pass; the problem solved with explicit wait
+//        Assert.assertEquals(message, testCenterPage.helloWorld.getText()); //pass; the problem
+//        solved with explicit wait
 
         //2. Selenide wait
         /**
-         * burada selenium veya junit teki assertion ları (old fashion) webdriver wait kullanmaktansa, selenide deki daha
-         * modern, kullanışlı ve kolay olan selenide assertionları ile birlikte explicit wait kullanılabilir
+         * burada selenium veya junit teki assertion ları (old fashion) webdriver wait
+         * kullanmaktansa, selenide deki daha modern, kullanışlı ve kolay olan selenide
+         * assertionları ile birlikte explicit wait kullanılabilir
          */
 //        testCenterPage.helloWorld.should(visible, Duration.ofSeconds(10)); // selenide wait
 //        Assert.assertEquals(message, testCenterPage.helloWorld.getText());
